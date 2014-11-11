@@ -1,0 +1,63 @@
+\documentclass[a4paper, addpoints, leqno, answers]{exam}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{calc}
+
+\usepackage{listings}
+\newcommand{\lstinlinestyle}{\fontfamily{pcr}\fontsize{10pt}{12pt}\selectfont}
+\newcommand{\lstfigurestyle}{\fontfamily{pcr}\fontsize{8pt}{10pt}\selectfont}
+\newcommand{\lstenumstyle}{\fontfamily{pcr}\fontsize{9pt}{11pt}\selectfont}
+\newcommand{\code}[1]{\lstinline[language={},basicstyle=\lstinlinestyle]{#1}}
+\newcommand{\smcode}[1]{\lstinline[language={},basicstyle=\lstenumstyle]{#1}}
+
+\lstset{basicstyle = \lstenumstyle}
+\lstset{tabsize = 2}
+\lstset{numberbychapter=false}
+\lstset{frame = single, framerule = 0.1pt}
+\lstset{numbers = none, numberstyle = \scriptsize\sffamily}%\textcolor{black}}
+\lstset{aboveskip=\smallskipamount, belowskip=.8\smallskipamount}
+\lstset{framexbottommargin=0pt}
+\lstset{captionpos = t}
+\lstset{escapeinside={/+}{+/}}
+\lstset{moredelim=*[is][\underbar]{_}{_}}
+\lstset{moredelim=[is][basicstyle]{`}{`}} % to escape non-keyword words
+\lstset{showstringspaces=false}
+\lstset{showlines=true}
+
+\title{IN4303 --- Compiler Construction}
+\author{Excercises}
+\date{\today}
+
+\pagestyle{headandfoot}
+
+\header
+{IN4303}
+{}
+{Compiler Construction}
+
+\footer
+{}
+{Page \thepage\ of \numpages}
+{}
+
+\headrule
+\footrule
+
+\begin{document}
+
+\pointsinrightmargin
+\totalformat{(\totalpoints\ \points)}
+\qformat{\textbf{Question \thequestion:} \thequestiontitle\hfill}
+\unframedsolutions
+
+\begin{questions}
+
+\input{register-allocation/commands}
+\input{register-allocation/liveness-appel-11-3-1}
+\newpage
+\input{register-allocation/liveness-gcd}
+
+\end{questions}
+
+\end{document}

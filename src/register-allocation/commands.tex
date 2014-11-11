@@ -1,0 +1,17 @@
+\newcommand{\live}{%
+	\ensuremath{%
+		\ifprintanswers
+			\blacksquare
+		\else
+			\square
+		\fi
+	}
+}
+	
+\newcommand{\dead}{\ensuremath{\square}}
+
+\newlength{\txt}
+\newcommand{\solorline}[1]{%
+	\settowidth{\txt}{#1}
+	\ifprintanswers #1 \else \underline{\hspace{2\txt}}\fi
+}
