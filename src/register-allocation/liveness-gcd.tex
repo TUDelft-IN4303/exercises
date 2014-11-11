@@ -1,0 +1,75 @@
+\titledquestion{Liveness analysis}
+\droptotalpoints
+
+\vspace{2ex}
+\begin{minipage}{4cm}
+\begin{lstlisting}
+l1: if y = 0 goto l2
+    q := x / y
+    t := q * y
+    r := x - t
+    x := y 
+    y := r  
+    goto l1    
+l2: return x     
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{.675\textwidth}
+\begin{parts}
+\part[2]
+Construct the control graph for the intermediate code on the left.
+\part[3]
+Fill in the table below 
+  with successor nodes, defined variables, and used variables 
+  for each node in the control graph.
+\part[15]
+Calculate live-ins and live-outs for each node in the control graph in a table
+on paper.
+Present your final round of calculation in the table below ($\blacksquare$ =
+live) and name the columns accordingly.
+\end{parts}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{tabular}{r|l|l|l|ccccc|ccccc}
+& & & &  
+\multicolumn{5}{c|}{\solorline{live-out}} &
+\multicolumn{5}{c}{\solorline{live-in}} \\
+node & succ & def & use & 
+\code{r} & \code{q} & \code{t} & \code{x} & \code{y} &
+\code{r} & \code{q} & \code{t} & \code{x} & \code{y} \\
+\hline
+& & & & 
+\dead & \dead & \dead & \live & \dead & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
+\hline
+& & & & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$ & 
+$\square$ & $\square$ & $\square$ & $\square$ & $\square$
+\end{tabular}
